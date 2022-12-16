@@ -8,25 +8,26 @@ console.log('JS OK')
 
 
 // prendo gli elementi 
-let button = document.getElementById('button');
+let button = document.querySelector('button');
 const grid = document.getElementById('grid-container');
 const rows = 10
 const col = 10
-const totalcells= rows * col;
+const totalcells = (rows * col)+1;
 
-// aggiungo una function per genereare delle celle al click
-let createCell =() => {
-    let cell = document.createElement('div');
-    cell.classList.add('grid-cell');
-    grid.appendChild(cell);
-    return cell;
-
-}
-
-// aggiungo un event listener per richiamare la funzione di generazione caselle al click
+// aggiungo un event listener per generare le caselle al click
 button.addEventListener('click', function(){
-    for(i=0; i < totalcells; i++ ){
-       createCell();
-    }
-})
+ 
+    for(i=1; i < totalcells; i++ ){
+        let cell = document.createElement('div');
+        cell.innerHTML = i
+        grid.appendChild(cell);
+        cell.classList.add('grid-cell');
+
+        cell.addEventListener('click',function(){
+            cell.classList.add('click-azure')
+        })
+        }
+    })
+
+
 
