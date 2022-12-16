@@ -2,7 +2,7 @@ console.log('JS OK')
 
 /*
 1)genero 100 celle per 10 righe al click del button
-2)
+2)per ogni cella creo un event listener che va a cambiarre il colore di background
 
 */
 
@@ -23,8 +23,10 @@ button.addEventListener('click', function(){
         grid.appendChild(cell);
         cell.classList.add('grid-cell');
 
+// aggiungo un altro event listener per cambiare il colore delle caselle
         cell.addEventListener('click',function(){
             cell.classList.add('click-azure')
+            console.log(cell.innerText)
         })
         }
     })
