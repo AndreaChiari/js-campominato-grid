@@ -19,7 +19,7 @@ const totalcells= rows * col;
     for(i=0; i < totalcells; i++ ){
 
         let cell = document.createElement('div');
-        cell.classlist.add('grid-cell');
+        cell.classList.add('grid-cell');
       
         grid.appendChild(cell);
     }
