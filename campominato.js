@@ -14,17 +14,20 @@ const rows = 10
 const col = 10
 const totalcells= rows * col;
 
-// aggiungo una function con un for per generare 100 celle al click
-let createCell =() =>{
-    for(i=0; i < totalcells; i++ ){
+// aggiungo una function per genereare delle celle al click
+let createCell =() => {
+    let cell = document.createElement('div');
+    cell.classList.add('grid-cell');
+    grid.appendChild(cell);
 
-        let cell = document.createElement('div');
-        cell.classList.add('grid-cell');
-        grid.appendChild(cell);
-    }}
+}
 
 // aggiungo un event listener per richiamare la funzione di generazione caselle al click
 button.addEventListener('click', function(){
-    createCell();
+    for(i=0; i < totalcells; i++ ){
+       
+        createCell();
+        
+    }
 })
 
