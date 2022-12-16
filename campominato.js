@@ -8,19 +8,23 @@ console.log('JS OK')
 
 
 // prendo gli elementi 
-const button = document.getElementById('button');
+let button = document.getElementById('button');
 const grid = document.getElementById('grid-container');
 const rows = 10
 const col = 10
 const totalcells= rows * col;
 
-// aggiungo un event listener con un for per generare 100 celle al click
-
+// aggiungo una function con un for per generare 100 celle al click
+let createCell =() =>{
     for(i=0; i < totalcells; i++ ){
 
         let cell = document.createElement('div');
         cell.classList.add('grid-cell');
-      
         grid.appendChild(cell);
-    }
+    }}
+
+// aggiungo un event listener per richiamare la funzione di generazione caselle al click
+button.addEventListener('click', function(){
+    createCell();
+})
 
