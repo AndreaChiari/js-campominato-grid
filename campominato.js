@@ -19,15 +19,14 @@ let createCell =() => {
     let cell = document.createElement('div');
     cell.classList.add('grid-cell');
     grid.appendChild(cell);
+    return cell;
 
 }
 
 // aggiungo un event listener per richiamare la funzione di generazione caselle al click
 button.addEventListener('click', function(){
     for(i=0; i < totalcells; i++ ){
-       
-        createCell();
-        
+       createCell();
     }
 })
 
